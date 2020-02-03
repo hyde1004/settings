@@ -119,3 +119,15 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+if [ "$TERM" != "xterm-256color" ]; then
+  export TERM=xterm-256color
+fi
+
+
+# Android CCAHE
+export USE_CCACHE=1
+export CCACHE_DIR=~/.ccache
+export CCACHE_EXEC=/usr/bin/ccache
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

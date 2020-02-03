@@ -129,5 +129,6 @@ fi
 export USE_CCACHE=1
 export CCACHE_DIR=~/.ccache
 export CCACHE_EXEC=/usr/bin/ccache
+# ccache -M 50G  # it should run one time
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

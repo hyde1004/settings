@@ -68,7 +68,7 @@ else
     #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     #PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
     PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(__git_ps1)\[\033[00m\] $ "
-    PS1="[\A] $PS1" # add current time
+    PS1="[\D{%F %T}] $PS1" # add date and time info
 fi
 unset color_prompt force_color_prompt
 

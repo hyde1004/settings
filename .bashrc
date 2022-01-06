@@ -70,6 +70,11 @@ case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
+screen)
+    PS1="\[\033[32m\]\w\[\033[33m\]\$(__git_ps1)\[\033[00m\] $ "
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PROMPT_DIRTRIM=2
+    ;;
 *)
     ;;
 esac
@@ -122,6 +127,7 @@ fi
 export USE_CCACHE=1
 export CCACHE_DIR=~/.ccache
 export CCACHE_EXEC=/usr/bin/ccache
+export GIT_CACHE=~/work/gitcache
 # ccache -M 50G  # it should run one time
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

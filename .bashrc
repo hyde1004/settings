@@ -60,8 +60,6 @@ if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(__git_ps1)\[\033[00m\] $ "
-#    PS1="[\D{%F %T}] $PS1" # add date and time info
 fi
 unset color_prompt force_color_prompt
 
@@ -69,11 +67,6 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-screen)
-    PS1="\[\033[32m\]\w\[\033[33m\]\$(__git_ps1)\[\033[00m\] $ "
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PROMPT_DIRTRIM=3
     ;;
 *)
     ;;
@@ -123,11 +116,21 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#
+# My setting
+#
+
+# PROMPT: Full Path, git branch, time
+PS1="\[\033[32m\]\n\w\[\033[33m\]\$(__git_ps1) \[\033[31m\]\t\n\[\033[00m\]$ "
+
 # Android CCAHE
 export USE_CCACHE=1
-export CCACHE_DIR=~/.ccache
+#export CCACHE_DIR=~/.ccache
 export CCACHE_EXEC=/usr/bin/ccache
-export GIT_CACHE=~/work/gitcache
 # ccache -M 50G  # it should run one time
 
+# Android Reference Repo Path
+export GIT_CACHE=~/work/gitcache
+
+# fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

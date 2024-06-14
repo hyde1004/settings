@@ -1,3 +1,4 @@
+echo "~/.bashrc is running"
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -121,10 +122,11 @@ fi
 #
 
 # PROMPT: Full Path, git branch, time
-PS1="\[\033[32m\]\n\w\[\033[33m\]\$(__git_ps1) \[\033[31m\]\t\n\[\033[00m\]$ "
+#PS1="\[\033[32m\]\n\w\[\033[33m\]\$(__git_ps1) \[\033[31m\]\t\n\[\033[00m\]$ "
+PS1="\[\033[32m\]\w\[\033[33m\]\$(__git_ps1) \[\033[31m\]\t\[\033[00m\] $ " # Remove newlines
 
 # Android CCAHE
-export USE_CCACHE=1
+#export USE_CCACHE=1
 #export CCACHE_DIR=~/.ccache
 export CCACHE_EXEC=/usr/bin/ccache
 # ccache -M 50G  # it should run one time
@@ -134,3 +136,9 @@ export GIT_CACHE=~/work/gitcache
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# repo
+alias repo_diff="repo diffmanifests --pretty='%C(yellow)%h %C(cyan)%cs %C(blue)%an%C(auto)%d %C(reset)%s'"
+
+# zoxide
+eval "$(~/.local/bin/zoxide init bash)"

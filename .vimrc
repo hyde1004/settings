@@ -6,6 +6,12 @@ set showmatch "show bracket
 set autoindent
 set paste
 
+" tab settings
+set tabstop=4 "tab: 4 col
+set expandtab "tab to space
+set shiftwidth=4
+
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -24,3 +30,11 @@ call vundle#end()
 "autocmd VimEnter * NERDTree
 " <F3> NERDTree
 map <F3> :NERDTreeToggle<cr>
+let g:NERDTreeWinSize = 40
+
+" refer to https://ospace.tistory.com/594
+" setlocal makeprg=cargo\ run
+" map <F10> :make!<CR> :cw<CR>
+
+" https://mkseo.pe.kr/blog/?p=647
+" au FileType python map <f2> : !python %

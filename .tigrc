@@ -1,0 +1,5 @@
+# add "source ~/settings/.tigrc" in ~/.tigrc
+
+set main-view-date-display = custom   # show simple date
+set main-view-id-display = yes        # show commit id
+set main-view-commit-title-graph = v2 # show graph

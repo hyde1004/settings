@@ -3,3 +3,12 @@
 set main-view-date-display = custom   # show simple date
 set main-view-id-display = yes        # show commit id
 set main-view-commit-title-graph = v2 # show graph
+
+
+#set main-view   = line-number:no,interval=5 id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
+
+#bind diff   <Down>  move-down
+#bind diff   <Up>    move-up
+#
+bind main D !git difftool %(commit)^ %(commit) # 'D' key on main view: compare commit with Beyond Compare
+bind diff d !git difftool %(commit)^ %(commit) -- %(file) # 'd' key on diff view: compare file with Beyond Compare

@@ -10,5 +10,9 @@ set main-view-commit-title-graph = v2 # show graph
 #bind diff   <Down>  move-down
 #bind diff   <Up>    move-up
 #
-bind main D !git difftool %(commit)^ %(commit) # 'D' key on main view: compare commit with Beyond Compare
-bind diff d !git difftool %(commit)^ %(commit) -- %(file) # 'd' key on diff view: compare file with Beyond Compare
+#bind main B !git difftool %(commit)^ %(commit) # 'D' key on main view: compare commit with Beyond Compare
+#bind diff b !git difftool %(commit)^ %(commit) -- %(file) # 'd' key on diff view: compare file with Beyond Compare
+#bind main B !/home/jangk/bin/compare_commit.sh %(commit) # on main-view, show all diff with Beyond Compare
+bind diff B !git gbdiff %(commit)^ %(commit) # 'B' key on diff view: compare commit with Beyond Compare
+#bind main B !sh -c '~/bin/compare_commit.sh %(commit)' # on main-view, show all diff with Beyond Compare
+#bind diff B !sh -c '~/bin/compare_commit.sh %(commit) &' # on main-view, show all diff with Beyond Compare

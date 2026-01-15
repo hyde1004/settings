@@ -29,4 +29,4 @@ alias fd='fd --no-ignore'
 
 # ripgrep default option
 #export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-alias rg='rg --no-ginore --pretty'
+alias rg='rg --no-ignore --pretty'

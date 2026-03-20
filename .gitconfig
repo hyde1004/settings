@@ -5,5 +5,8 @@
 [alias]
     hs = log --abbrev=7 --pretty='%C(yellow)%h %C(cyan)%cs %C(blue)%an%C(auto)%d %C(reset)%s' --graph
     gbdiff=difftool --dir-diff --no-symlinks -t bc
+[core]
+	editor = nvim
+	autocrlf = input
 [rerere]
     enabled = false

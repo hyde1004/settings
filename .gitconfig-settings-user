@@ -1,0 +1,7 @@
+# How to include this config from ~/.gitconfig
+#[includeIf "gitdir:~/settings/"]
+#  path = ~/.gitconfig-settings-user
+
+[user]
+        name = hyde1004
+        email = hyde1004@gmail.com

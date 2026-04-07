@@ -3,7 +3,7 @@
 #
 # add "source ~/settings/.bashrc" in ~/.bashrc
 
-echo "~/settings/.bashrc is running"
+#echo "~/settings/.bashrc is running"
 # PROMPT: Full Path, git branch, time
 PS1="\[\033[32m\]\w\[\033[33m\]\$(__git_ps1) \[\033[31m\]\t\[\033[00m\] $ "
 
